@@ -3,10 +3,75 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>match</ion-title>
+    <ion-title>Partidos Amistosos</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
- match
+
+	<ion-card>
+    	<img src="assets/imgs/friendly.jpg"/>
+    	<div class="card-title">Miércoles 30 de Mayo</div>
+    	<div class="card-subtitle">Cancha ECCI, Calle 170 # 45</div>
+    	
+    	<div class="card-text-left">
+    		<b>Equipo A</b><br>
+    		Edward Viancha <ion-icon name="hand"></ion-icon><br>
+    		Andres Rojas<br>
+			Hector Guerrero<br>
+			Juan Pablo Castiblanco<br>
+			Wilson Arguello<br>
+			Harold Escorcia<br>
+			Jackson Mendez<br>
+			Rafael<br>
+			Erwin Candelario<br>
+    	</div>
+    	<div class="card-text-right">
+    		<b>Equipo B</b><br>
+    		Eduardo Quintero <ion-icon name="hand"></ion-icon><br>
+    		William Sogamoso<br>
+			Andro Loewenstein<br>
+			Jose Manuel Acero<br>
+			Ricardo Fagua<br>
+			Juan Pablo Valdes<br>
+			Cesar Camacho<br>
+			Diego Gomez<br>
+			Joiman Gomez<br>
+    	</div>
+    	<button ion-button outline (click)="applyModal()">
+	      <ion-icon name="create" ></ion-icon>&nbsp;Quiero inscribirme 
+	    </button>
+    	<button ion-button outline (click)="rateModal()">
+	      <ion-icon name="clipboard"></ion-icon>&nbsp;Calificar jugadores
+	    </button>
+	    
+  	</ion-card>
+
+  	<ion-card>
+      <ion-item>
+        <h2>Resultados anteriores:</h2>
+      </ion-item>
+  		<ion-item>
+    		<ion-avatar item-start>
+      			<img src="assets/imgs/match.jpg">
+    		</ion-avatar>
+    		<h2>Equipo A [8] - [6] Equipo B</h2>
+    		<p>Miércoles 23 de Mayo, Prado</p>
+  		</ion-item>
+  		<ion-item>
+    		<ion-avatar item-start>
+      			<img src="assets/imgs/match2.jpg">
+    		</ion-avatar>
+    		<h2>Equipo A [2] - [5] Equipo B</h2>
+    		<p>Miércoles 16 de Mayo, Ecci</p>
+  		</ion-item>
+  		<ion-item>
+    		<ion-avatar item-start>
+      			<img src="assets/imgs/match3.jpeg">
+    		</ion-avatar>
+    		<h2>Equipo A [7] - [4] Equipo B</h2>
+    		<p>Miércoles 9 de Mayo, Ecci</p>
+  		</ion-item>
+	</ion-card>
+
 </ion-content>

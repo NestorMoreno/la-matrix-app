@@ -1,12 +1,107 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>profile</ion-title>
-  </ion-navbar>
+ 	<ion-navbar>
+    	<button ion-button menuToggle>
+      		<ion-icon name="menu"></ion-icon>
+    	</button>
+    	<ion-title>Mi Perfil</ion-title>
+  	</ion-navbar>
 </ion-header>
 
 <ion-content>
- profile
+	<ion-card>
+		<ion-card-header>
+		    <h1>Lionel Messi</h1><br> 
+		    <h3>24 Junio 1987, Rosario AR</h3>
+		</ion-card-header>
+	    <ion-card-content>
+	    	<div text-center>
+		    	<ion-img width="50%" src="assets/imgs/profile.jpg"></ion-img>  
+			</div>
+			<p>
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived
+			</p>
+	    </ion-card-content>
+
+	    <ion-item>
+	      	<ion-icon name='podium' item-start style="color: #55acee"></ion-icon>
+	      	<ion-label>Ranking</ion-label>
+	      	<ion-badge item-end>1</ion-badge>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='star-outline' item-start style="color: #55acee"></ion-icon>
+	      		Técnica
+	      	<ion-badge item-end> 90 </ion-badge>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='walk' item-start style="color: #55acee"></ion-icon>
+	      		Estado físico
+	      	<ion-badge item-end>70</ion-badge>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='ios-speedometer-outline' item-start style="color: #55acee"></ion-icon>
+	      		Velocidad
+	      	<ion-badge item-end>60</ion-badge>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='grid' item-start style="color: #55acee"></ion-icon>
+	      	<ion-label>Partidos Jugados</ion-label>
+	      	<ion-badge item-end>17</ion-badge>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='football' item-start style="color: #55acee"></ion-icon>
+	      	<ion-label>Goles</ion-label>
+	      	<ion-badge item-end>46</ion-badge>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='clipboard' item-start style="color: #55acee"></ion-icon>
+	      	<ion-label>Estado</ion-label>
+	      	<ion-badge item-end>Estable</ion-badge>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='hand' item-start style="color: #55acee"></ion-icon>
+	      	<ion-label color="primary" floating>Posición</ion-label>
+	      	<ion-select [(ngModel)]="gaming">
+		     	<ion-option value="1">Arquero</ion-option>
+		      	<ion-option value="2" selected="true">Jugador</ion-option>
+		    </ion-select>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='mail' item-start style="color: #55acee"></ion-icon>
+    		<ion-label color="primary" floating>Correo</ion-label>
+   			<ion-input type="email" value="correo@servidor.com.co"></ion-input>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='phone-portrait' item-start style="color: #55acee"></ion-icon>
+	      	<ion-label color="primary" floating>Celular</ion-label>
+   			<ion-input type="tel" value="312 456 78 90"></ion-input>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='calendar' item-start style="color: #55acee"></ion-icon>
+			<ion-label color="primary" floating>Fecha de Nacimiento</ion-label>
+   			<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+	    </ion-item>
+
+	    <ion-item>
+	      	<ion-icon name='arrow-round-up' item-start style="color: #55acee"></ion-icon>
+	      	<ion-label color="primary" floating>Altura</ion-label>
+   			<ion-input type="text" value="1.70 m"></ion-input>
+	    </ion-item>
+
+	    <div padding>
+	    	<button ion-button color="primary" block>Guardar</button>
+	  	</div>
+
+  	</ion-card>
+ 
 </ion-content>
+
