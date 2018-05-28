@@ -8,21 +8,31 @@
 </ion-header>
 
 <ion-content padding>
+
   <ion-card>
-      <ion-card-content>
-        <ion-card-title>
-          <h3>
-            <ion-icon item-start="" role="img" class="icon icon-md ion-md-football item-icon" aria-label="football" ng-reflect-name="football"></ion-icon>
-             La Matrix
+      <ion-card-header text-center>
+         <ion-icon item-start="" role="img" class="icon icon-md ion-md-football item-icon" aria-label="football" ng-reflect-name="football"></ion-icon>
+             LA MATRIX
             <ion-icon item-start="" role="img" class="icon icon-md ion-md-beer item-icon" aria-label="beer" ng-reflect-name="beer"></ion-icon>
-          </h3>
-        </ion-card-title>
-        <img src="assets/imgs/matrix.jpg" style="width: 60%" />
+      </ion-card-header>
+      <ion-card-content>
+        <div text-center>
+          <ion-img width="60%" src="assets/imgs/matrix.jpg"></ion-img>  
+       </div>
         <p>
-         Loremaaa Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived <noscript></noscript>.
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived <noscript></noscript>.
         </p>
       </ion-card-content>
-  </ion-card> 
+  </ion-card>
 
-  <button ion-button secondary menuToggle>Menú</button>
+  <ion-fab center middle>
+    <button ion-fab mini><ion-icon name="share"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>

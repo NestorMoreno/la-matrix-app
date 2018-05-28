@@ -1,0 +1,42 @@
+<ion-header>
+	<ion-toolbar>
+    	<ion-title>Calificar jugadores</ion-title>
+	    <ion-buttons start>
+	      	<button ion-button (click)="dismiss()">
+	        	<ion-icon name="md-close" ></ion-icon>
+	      	</button>
+	    </ion-buttons>
+  	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-list>
+		<ion-list-header>Jugador de prueba</ion-list-header>
+    	<ion-item>
+    		<ion-label item-start>Técnica </ion-label>
+	  	 	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate1" color="secondary">
+	        	<ion-icon range-left small name="star-outline"></ion-icon>
+	        	<ion-icon range-right name="star-outline"></ion-icon>
+	      	</ion-range>
+	      	<ion-badge item-end>{{match.rate1}}</ion-badge>
+		</ion-item>
+		<ion-item>
+    		<ion-label item-start>Estado físico </ion-label>
+	  	 	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate2" color="secondary">
+	        	<ion-icon range-left small name="walk"></ion-icon>
+	        	<ion-icon range-right name="walk"></ion-icon>
+	      	</ion-range>
+	      	<ion-badge item-end>{{match.rate2}}</ion-badge>
+		</ion-item>
+		<ion-item>
+    		<ion-label item-start>Velocidad </ion-label>
+	  	 	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate3" color="secondary">
+	        	<ion-icon range-left small name="ios-speedometer-outline"></ion-icon>
+	        	<ion-icon range-right name="ios-speedometer-outline"></ion-icon>
+	      	</ion-range>
+	      	<ion-badge item-end>{{match.rate3}}</ion-badge>
+		</ion-item>
+	</ion-list>
+	
+</ion-content>

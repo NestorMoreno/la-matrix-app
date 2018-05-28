@@ -8,8 +8,10 @@ import { ListPage } from '../pages/list/list';
 import { PlayersPage } from '../pages/players/players';
 import { PlayerPage } from '../pages/player/player';
 import { MatchPage } from '../pages/match/match';
+import { ChampionshipPage } from '../pages/championship/championship';
 import { StatisticsPage } from '../pages/statistics/statistics';
 import { ProfilePage } from '../pages/profile/profile';
+import { SettingsPage } from '../pages/settings/settings';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,17 +21,20 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
+    // Navigation
     this.pages = [
-      { title: 'Principal', component: HomePage },
-      { title: 'Jugadores', component: PlayersPage },
-      { title: 'Partido', component: MatchPage },
-      { title: 'Estadísticas', component: StatisticsPage },
-      { title: 'Mi perfil', component: ProfilePage }
+      { title: 'Principal', component: HomePage, icon: 'football' },
+      { title: 'Jugadores', component: PlayersPage, icon: 'people' },
+      { title: 'Partidos', component: MatchPage, icon: 'happy' },
+      { title: 'Campeonato', component: ChampionshipPage, icon: 'trophy' },
+      //{ title: 'Estadísticas', component: StatisticsPage, icon: 'podium' },
+      { title: 'Mi perfil', component: ProfilePage, icon: 'contact' },
+      { title: 'Configuración', component: SettingsPage, icon: 'options' }
     ];
 
   }
