@@ -1,0 +1,33 @@
+<ion-header>
+	<ion-toolbar>
+    	<ion-title>Inscripción a Partido</ion-title>
+	    <ion-buttons start>
+	      	<button ion-button (click)="dismiss()">
+	        	<ion-icon name="md-close" ></ion-icon>
+	      	</button>
+	    </ion-buttons>
+  	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-card>
+		<ion-card-header>
+			Partido Miércoles 30
+		</ion-card-header>
+		<ion-card-content>
+			<ion-label><b>Fecha:</b> Miércoles, 30 de Mayo</ion-label>
+			<ion-label><b>Lugar:</b> Cancha ECCI, Calle 170 # 45</ion-label>
+			<ion-label><b>Valor:</b> 10.000 $</ion-label>
+			
+			<div text-center>
+				<ion-badge item-end>10/16</ion-badge><br><br>
+				<button ion-button outline (click)="apply()">
+	      			<ion-icon name="checkmark-circle" ></ion-icon>&nbsp;Inscribirme
+	    		</button>
+			</div>
+			
+		</ion-card-content>
+	</ion-card>
+
+</ion-content>

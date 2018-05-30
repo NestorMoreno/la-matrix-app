@@ -1,0 +1,60 @@
+configs
+	_id
+	name
+	value
+	state
+players
+	_id
+	name
+	picture
+	description
+	mail
+	mobile
+	birthDate
+	placeBirth
+	height
+	rate1 (tecnica)
+	rate2 (estado fisico)
+	rate3 (Velocidad)
+	rate4 (Fairplay) 
+	rate5 (Definicion) 
+	matches
+	goals
+	state (sube, estable, baja)
+	position (Goalkeeper)
+	DateUpdated
+	ranking
+	state
+teams
+	_id
+	name
+	date
+	quantity
+	players: [{}]
+	state
+matches
+	_id
+	championship_id
+	teamA_id
+	teamB_id
+	description
+	scoreA
+	scoreB
+	finished
+	dateSubscription
+	dateStartMatch
+	dateEndMatch
+	place
+	price
+	state
+championships
+	_id
+	name
+	date
+	results: [{ position:0, team:"", pj:0, pg:0, pe:0, pp:0, dg:0, pts:0}]
+	state
+
+
+
+
+
