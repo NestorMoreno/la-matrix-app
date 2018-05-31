@@ -20,62 +20,47 @@
 	<ion-list>
     	<ion-item>
     		<ion-label>Técnica </ion-label>
-		</ion-item>
-
-		<ion-item>
-	  	 	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate1" color="secondary">
+    		<ion-badge item-end>{{match.rate1}}</ion-badge><br>
+    		<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate1" color="secondary">
 	        	<ion-icon range-left small name="star-outline"></ion-icon>
 	        	<ion-icon range-right name="star-outline"></ion-icon>
 	      	</ion-range>
-	      	<ion-badge item-end>{{match.rate1}}</ion-badge>
 		</ion-item>
 
 		<ion-item>
     		<ion-label>Estado físico </ion-label>
-		</ion-item>
-
-		<ion-item>
-	  	 	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate2" color="secondary">
+    		<ion-badge item-end>{{match.rate2}}</ion-badge><br>
+    		<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate2" color="secondary">
 	        	<ion-icon range-left small name="walk"></ion-icon>
 	        	<ion-icon range-right name="walk"></ion-icon>
 	      	</ion-range>
-	      	<ion-badge item-end>{{match.rate2}}</ion-badge>
 		</ion-item>
 
 		<ion-item>
     		<ion-label>Velocidad </ion-label>
-		</ion-item>
-
-		<ion-item>
-	  	 	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate3" color="secondary">
+	      	<ion-badge item-end>{{match.rate3}}</ion-badge><br>
+	      	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate3" color="secondary">
 	        	<ion-icon range-left small name="ios-speedometer-outline"></ion-icon>
 	        	<ion-icon range-right name="ios-speedometer-outline"></ion-icon>
 	      	</ion-range>
-	      	<ion-badge item-end>{{match.rate3}}</ion-badge>
 		</ion-item>
 
 		<ion-item>
 	      	<ion-label>Fair play </ion-label>
-	    </ion-item>
-
-	    <ion-item>
-	  	 	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate4" color="secondary">
+	      	<ion-badge item-end>{{match.rate4}}</ion-badge><br>
+	      	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate4" color="secondary">
 	        	<ion-icon range-left small name="pulse"></ion-icon>
 	        	<ion-icon range-right name="pulse"></ion-icon>
 	      	</ion-range>
-	      	<ion-badge item-end>{{match.rate4}}</ion-badge>
 	    </ion-item>
 
 	    <ion-item>
 	      	<ion-label>Definición </ion-label>
-	    </ion-item>
-
-	    <ion-item>
-	  	 	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate5" color="secondary">
+	      	<ion-badge item-end>{{match.rate5}}</ion-badge><br>
+	      	<ion-range min="0" max="100" pin="true" [(ngModel)]="match.rate5" color="secondary">
 	        	<ion-icon range-left small name="locate"></ion-icon>
 	        	<ion-icon range-right name="locate"></ion-icon>
 	      	</ion-range>
-	      	<ion-badge item-end>{{match.rate5}}</ion-badge>
 	    </ion-item>
 
 	</ion-list>

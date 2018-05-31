@@ -20,9 +20,9 @@ players
 	rate5 (Definicion) 
 	matches
 	goals
-	state (sube, estable, baja)
-	position (Goalkeeper)
-	DateUpdated
+	state (sube, estable, baja, lesionado)
+	position (Goalkeeper, jugador)
+	dateUpdated
 	ranking
 	state
 teams
