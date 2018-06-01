@@ -17,7 +17,7 @@ import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Push, PushObject, PushOptions} from '@ionic-native/push';
+import { Push} from '@ionic-native/push';
 
 import { ConfigsServiceProvider } from '../providers/configs-service/configs-service';
 

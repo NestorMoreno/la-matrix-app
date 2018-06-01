@@ -65,7 +65,7 @@ export class MyApp {
      ios: {
          alert: 'true',
          badge: true,
-         sound: 'false'
+         sound: 'true'
      },
      windows: {}
     };
@@ -73,6 +73,7 @@ export class MyApp {
     const pushObject: PushObject = this.push.init(options);
 
     pushObject.on('notification').subscribe((notification: any) => {
+      //alert('on notification');
       if (notification.additionalData.foreground) {
         let youralert = this.alertCtrl.create({
           title: 'Nueva notificación',
@@ -83,7 +84,7 @@ export class MyApp {
     });
 
     pushObject.on('registration').subscribe((registration: any) => {
-       //do whatever you want with the registration ID
+       //alert('on registration');  
     });
 
     pushObject.on('error').subscribe(error => alert('Error con el plugin!!!' + error));

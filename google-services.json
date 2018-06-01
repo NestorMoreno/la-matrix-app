@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "139476471212",
+    "firebase_url": "https://la-matrix.firebaseio.com",
+    "project_id": "la-matrix",
+    "storage_bucket": "la-matrix.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139476471212:android:1390176a0d286326",
+        "android_client_info": {
+          "package_name": "io.lamatrix.soccer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139476471212-6mol0gvk5b01c8igtr22dbufc3hnvksk.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "139476471212-6mol0gvk5b01c8igtr22dbufc3hnvksk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFOb0tqgBxGiBjdOKio0kW3wwI2YgX2js"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
