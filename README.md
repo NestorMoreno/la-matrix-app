@@ -11,7 +11,12 @@ Este proyecto consiste en una aplicación híbrida desarrollada en Ionic 2 para 
 
 ## Versiones
 
-V. 0.0.0: Creación del proyecto
+V. 0.0.0: Creación del proyecto 
+
 V. 0.0.1: Adición de conexión al API de servicios
+
 V. 0.1.1: Spike notificaciones Push
+
 V. 0.2.1: Primer versión notificaciones Push
+
+V. 0.2.2: Avance en módulo de jugadores

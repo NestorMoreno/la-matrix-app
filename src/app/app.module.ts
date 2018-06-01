@@ -20,6 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push} from '@ionic-native/push';
 
 import { ConfigsServiceProvider } from '../providers/configs-service/configs-service';
+import { PlayersServiceProvider } from '../providers/players-service/players-service';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { GeneralService } from '../providers/general-service/general-service';
@@ -65,6 +67,7 @@ import { GeneralService } from '../providers/general-service/general-service';
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ConfigsServiceProvider,
+    PlayersServiceProvider,
     GeneralService
   ]
 })

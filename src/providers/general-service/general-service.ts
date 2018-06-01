@@ -6,9 +6,9 @@ import _ from 'lodash';
 export class GeneralService {
 	public configs:{} = {};
 	public version:string = "0.0.1";
+	public apiEndpoint:string = "https://la-matrix.herokuapp.com/api/";
 
 	constructor() {
-    	console.log('General');
   	}
 
 

@@ -20,11 +20,11 @@ players
 	rate5 (Definicion) 
 	matches
 	goals
-	state (sube, estable, baja, lesionado)
-	position (Goalkeeper, jugador)
+	status (sube 1, estable 0, baja -1, lesionado -2)
+	position (Goalkeeper 1, jugador 2)
 	dateUpdated
 	ranking
-	state
+	state (activo 1, inactivo 0)
 teams
 	_id
 	name
