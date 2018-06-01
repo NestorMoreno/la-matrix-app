@@ -2,56 +2,74 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PlayerPage } from '../player/player';
 
+import { PlayersServiceProvider } from '../../providers/players-service/players-service';
+import _ from 'lodash';
+
 @Component({
   selector: 'page-players',
   templateUrl: 'players.html'
 })
 export class PlayersPage {
   selectedItem: any;
-  icons: string[];
-  items: Array<{icon: string, title: string, state: string }>;
+  items: Array<{icon: string, title: string, state: string }> = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public players:PlayersServiceProvider) {
     this.selectedItem = navParams.get('item');
 
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
+    this.loadPlayers();
 
-    this.items = [];
-   
-    this.items.push({
-      icon: 'person',
-      title: 'Eduardo Quintero',
-      state: 'md-trending-down'
-    });
+    //state: 'md-trending-down'
+    //state: 'md-trending-up'
+    //state: 'md-remove'
+    //state: 'md-medkit'
 
-    this.items.push({
-      icon: 'person',
-      title: 'William Sogamoso',
-      state: 'md-trending-up'
-    });
-
-    this.items.push({
-      icon: 'person',
-      title: 'Cesar Camacho',
-      state: 'md-remove'
-    });
-
-    this.items.push({
-      icon: 'person',
-      title: 'Andrés Rojas',
-      state: 'md-trending-down'
-    });
-
-    this.items.push({
-      icon: 'person',
-      title: 'Luis Suanca',
-      state: 'md-medkit'
-    });
-
+    //this.items.push({
+    //  icon: 'person',
+    //  title: 'Cesar Camacho',
+    //  state: 'md-remove'
+    //});
     
   }
+
+  loadPlayers() {
+
+    this.players.load().then(data => {
+        _.map(data, 
+          (o) => {
+            this.items.push({
+              icon: 'person',
+              title: o.name,
+              state: this.getStatus(o.status),
+            });
+          }
+        );
+        //console.log("PLAYERS2:", data)
+      });
+    
+  }
+
+  getStatus(s){
+    let ret = '';
+    switch(s) {
+      case 1:
+          ret = 'md-trending-up';
+          break;
+      case 0:
+          ret = 'md-remove';
+          break;
+      case -1:
+          ret = 'md-trending-down';
+          break;
+      case -2:
+          ret = 'md-medkit';
+          break;
+      default:
+          ret = '';
+    }
+    return ret;
+  }
+
+
 
   itemTapped(event, item) {
     console.log("ITEM: ", item);
