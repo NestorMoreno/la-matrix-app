@@ -3,6 +3,9 @@ import { Nav, Platform, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { LoginPage } from '../pages/login/login';
+import { AuthProvider } from '../providers/auth/auth';
+
 import { HomePage } from '../pages/home/home';
 //import { ListPage } from '../pages/list/list';
 import { PlayersPage } from '../pages/players/players';
@@ -21,18 +24,19 @@ import { Push, PushObject, PushOptions} from '@ionic-native/push';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any, icon: string}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public alertCtrl:AlertController, public push: Push) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public alertCtrl:AlertController, public push: Push, private _AUTH: AuthProvider) {
     this.initializeApp();
 
     // Navigation
     this.pages = [
       { title: 'Principal', component: HomePage, icon: 'football' },
       { title: 'Jugadores', component: PlayersPage, icon: 'people' },
-      { title: 'Partidos', component: MatchPage, icon: 'happy' }
+      { title: 'Partidos', component: MatchPage, icon: 'calendar' },
+      { title: 'Salir', component: LoginPage, icon: 'log-out' }
       //{ title: 'Campeonato', component: ChampionshipPage, icon: 'trophy' },
       //{ title: 'Estadísticas', component: StatisticsPage, icon: 'podium' },
       //{ title: 'Mi perfil', component: ProfilePage, icon: 'contact' },
@@ -52,9 +56,26 @@ export class MyApp {
   }
 
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    
+    if(page == 'Logout')
+      {
+        this._AUTH.logOut()
+        .then((data : any) =>
+        {
+          this.nav.setRoot(page.component);
+        })
+        .catch((error : any) =>
+        {
+          console.dir(error);
+        });
+      }
+
+      // Otherwise reset the content nav to have just this page
+      // we wouldn't want the back button to show in this scenario
+      else
+      {
+        this.nav.setRoot(page.component);
+      }
   }
 
   pushsetup() {

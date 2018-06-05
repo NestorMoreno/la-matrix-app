@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
 import { PlayersPage } from '../pages/players/players';
 import { PlayerPage } from '../pages/player/player';
 import { MatchPage } from '../pages/match/match';
@@ -25,12 +27,20 @@ import { PlayersServiceProvider } from '../providers/players-service/players-ser
 
 import { HttpClientModule } from '@angular/common/http';
 import { GeneralService } from '../providers/general-service/general-service';
+import { AuthProvider } from '../providers/auth/auth';
+
+// Import Firebase / environment config and initialise
+import * as firebase from 'firebase';
+import { environment } from '../environments/environment';
+
+firebase.initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
+    LoginPage,
     PlayersPage,
     PlayerPage,
     MatchPage,
@@ -43,6 +53,7 @@ import { GeneralService } from '../providers/general-service/general-service';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -51,6 +62,7 @@ import { GeneralService } from '../providers/general-service/general-service';
     MyApp,
     HomePage,
     ListPage,
+    LoginPage,
     PlayersPage,
     PlayerPage,
     MatchPage,
@@ -66,9 +78,11 @@ import { GeneralService } from '../providers/general-service/general-service';
     SplashScreen,
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider,
     ConfigsServiceProvider,
     PlayersServiceProvider,
-    GeneralService
+    GeneralService,
+    AuthProvider
   ]
 })
 export class AppModule {}

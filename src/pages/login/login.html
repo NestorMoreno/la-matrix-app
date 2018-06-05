@@ -1,0 +1,35 @@
+<ion-header>
+  	<ion-navbar>
+    	<ion-title>Ingreso</ion-title>
+  	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<img class="logo" src="assets/imgs/matrix.jpg" alt="Ionic Framework logo">
+	<div class="login">
+
+      	<h1>Bienvenido</h1>
+
+      	<p>Ingrese sus datos.</p>
+
+      	<form [formGroup]="form" (ngSubmit)="logIn()">
+        <ion-list>
+
+            <ion-item margin-bottom>
+               <ion-label>Correo</ion-label>
+               <ion-input type="email" formControlName="email"></ion-input>
+            </ion-item>
+
+            <ion-item margin-bottom>
+               <ion-label>Contraseña</ion-label>
+               <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+
+            <button ion-button color="primary" text-center block [disabled]="!form.valid">Ingresar</button>
+
+         </ion-list>
+      </form>
+
+   </div>
+
+</ion-content>

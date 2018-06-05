@@ -43,7 +43,6 @@ export class PlayersPage {
             });
           }
         );
-        //console.log("PLAYERS2:", data)
       });
     
   }
@@ -68,8 +67,6 @@ export class PlayersPage {
     }
     return ret;
   }
-
-
 
   itemTapped(event, item) {
     console.log("ITEM: ", item);
