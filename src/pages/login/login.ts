@@ -5,6 +5,9 @@ import { AuthProvider } from '../../providers/auth/auth';
 // Import the HomePage component
 import { HomePage } from '../home/home';
 
+import { Events } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
+
 @IonicPage()
 @Component({
   	selector: 'page-login',
@@ -16,7 +19,7 @@ export class LoginPage {
 	*/
    	public form: FormGroup;
 
-  	constructor(public navCtrl: NavController, public navParams: NavParams, private _FB: FormBuilder, private _AUTH: AuthProvider) {
+  	constructor(public navCtrl: NavController, public navParams: NavParams, private _FB: FormBuilder, private _AUTH: AuthProvider, public events: Events, public alertCtrl: AlertController) {
   		
   		// Define FormGroup object using Angular's FormBuilder
       	this.form = this._FB.group({
@@ -24,6 +27,13 @@ export class LoginPage {
          	'password'     : ['', Validators.required]
       	});
 
+      	this.events.subscribe('user:logged', (state) => {
+    		
+    		if (state) {
+    			this.navCtrl.setRoot(HomePage);
+    		}
+	    	
+	  	});
   	}
 
   	/**
@@ -45,13 +55,22 @@ export class LoginPage {
       	})
       	.catch((error : any) =>
       	{
+      		this.showAlert("Los datos ingresados no son válidos.");
          	console.log(error.message);
       	});
    	}
 
+   	showAlert(msg) {
+	    const alert = this.alertCtrl.create({
+	      	title: 'La-Matrix dice:',
+	      	subTitle: msg,
+	      	buttons: ['Aceptar']
+	    });
+		alert.present();
+	}
+
 
   	ionViewDidLoad() {
-    	console.log('ionViewDidLoad LoginPage');
   	}
 
 }

@@ -5,26 +5,32 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
 import * as firebase from 'firebase';
-
+import { Events } from 'ionic-angular';
 
 @Injectable()
 export class AuthProvider {
 
 	public user : Observable<any>;
 
-  	constructor(public http: Http) {
-    	firebase.auth().onAuthStateChanged((user) =>
+  	constructor(public http: Http, public events: Events) {
+  		this.userIsLogged();
+  	}
+
+  	userIsLogged(){
+  		firebase.auth().onAuthStateChanged((user) =>
       	{
+      		var res = false;
         	if (user)
         	{
-          		// User is signed in.
-          		console.log('User is signed in');
+          		console.log('User autenticado:', user);
+          		res = true;
         	}
         	else
         	{
-          		// No user is signed in.
-          		console.log('User is NOT signed in');
+          		console.log('Usuario no autenticado');
         	}
+
+        	this.events.publish('user:logged', res);
       });
   	}
 

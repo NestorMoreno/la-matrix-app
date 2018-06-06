@@ -47,6 +47,7 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
+
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
@@ -57,8 +58,10 @@ export class MyApp {
 
   openPage(page) {
     
-    if(page == 'Logout')
+    console.log("::::", page);
+    if(page.title == 'Salir')
       {
+
         this._AUTH.logOut()
         .then((data : any) =>
         {

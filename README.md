@@ -1,6 +1,6 @@
 
 
-# La Matrix V. 0.2.1
+# La Matrix V. 0.3.2
 
 Este proyecto consiste en una aplicación híbrida desarrollada en Ionic 2 para la administración de partidos de fútbol 5.
 
@@ -23,6 +23,8 @@ V. 0.2.2: Avance en módulo de jugadores
 
 V. 0.2.3: Corrrección en despliegue Android y continuación con el módulo de jugadores
 
-V. 0.3.0: Creación del login
+V. 0.3.1: Creación del login
+
+V. 0.3.2: Avance en validaciones del login
 
 
