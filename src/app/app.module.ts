@@ -32,6 +32,8 @@ import { AuthProvider } from '../providers/auth/auth';
 // Import Firebase / environment config and initialise
 import * as firebase from 'firebase';
 import { environment } from '../environments/environment';
+import { ChampionshipsServiceProvider } from '../providers/championships-service/championships-service';
+import { MatchesServiceProvider } from '../providers/matches-service/matches-service';
 
 firebase.initializeApp(environment.firebase);
 
@@ -82,7 +84,9 @@ firebase.initializeApp(environment.firebase);
     ConfigsServiceProvider,
     PlayersServiceProvider,
     GeneralService,
-    AuthProvider
+    AuthProvider,
+    ChampionshipsServiceProvider,
+    MatchesServiceProvider
   ]
 })
 export class AppModule {}

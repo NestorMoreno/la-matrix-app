@@ -10,25 +10,74 @@
 <ion-content padding>
 
   <ion-card>
-      <ion-card-header text-center>
+    <ion-card-header text-center>
          <ion-icon item-start="" role="img" class="icon icon-md ion-md-football item-icon" aria-label="football" ng-reflect-name="football"></ion-icon>
              LA MATRIX {{general.configs.version}}
             <ion-icon item-start="" role="img" class="icon icon-md ion-md-beer item-icon" aria-label="beer" ng-reflect-name="beer"></ion-icon>
       </ion-card-header>
-      <img src="assets/imgs/matrix.jpg"/>
       <ion-card-content>
         <p>{{general.configs.textHome}}</p>
       </ion-card-content>
   </ion-card>
 
-  <ion-fab center middle>
-    <button ion-fab mini><ion-icon name="share"></ion-icon></button>
-    <ion-fab-list>
-      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
-      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
-      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
-      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
-    </ion-fab-list>
-  </ion-fab>
+  <ion-card *ngFor="let match of matches">
+
+      <img src="assets/imgs/match1.jpg"/>
+      <div class="card-title">{{match.description}}</div>
+      <div class="card-subtitle">{{match.place}}</div>
+      
+      <div class="card-text-left">
+        <div><b>{{match.teamA.name}}</b></div>
+        <div *ngFor="let player of match.teamA.players">
+          <div>
+            {{ player.name}} <ion-icon *ngIf="player.position == 1" name="hand"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-text-right">
+        <div><b>{{match.teamB.name}}</b></div>
+        <div *ngFor="let player of match.teamB.players">
+          <div>
+            {{ player.name}} <ion-icon *ngIf="player.position == 1" name="hand"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+      <button ion-button outline (click)="applyModal()">
+        <ion-icon name="create" ></ion-icon>&nbsp;Quiero inscribirme 
+      </button>
+      <button ion-button outline (click)="rateModal()">
+        <ion-icon name="clipboard"></ion-icon>&nbsp;Calificar jugadores
+      </button>
+      
+  </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <h2>Resultados anteriores:</h2>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+            <img src="assets/imgs/match.jpg">
+        </ion-avatar>
+        <h2>Equipo A [8] - [6] Equipo B</h2>
+        <p>Miércoles 23 de Mayo, Prado</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+            <img src="assets/imgs/match2.jpg">
+        </ion-avatar>
+        <h2>Equipo A [2] - [5] Equipo B</h2>
+        <p>Miércoles 16 de Mayo, Ecci</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+            <img src="assets/imgs/match3.jpeg">
+        </ion-avatar>
+        <h2>Equipo A [7] - [4] Equipo B</h2>
+        <p>Miércoles 9 de Mayo, Ecci</p>
+      </ion-item>
+  </ion-card>
 
 </ion-content>

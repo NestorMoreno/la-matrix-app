@@ -84,7 +84,12 @@ export class MyApp {
   pushsetup() {
     const options: PushOptions = {
      android: {
-         senderID: '139476471212'
+         senderID: '139476471212',
+         icon: "notification",
+         iconColor: "blue",
+         sound: true,
+         vibrate: true,
+         forceShow: true
      },
      ios: {
          alert: 'true',
@@ -108,7 +113,8 @@ export class MyApp {
     });
 
     pushObject.on('registration').subscribe((registration: any) => {
-       //alert('on registration');  
+       alert("on reg" + registration);
+       console.log('on registration', registration)  
     });
 
     pushObject.on('error').subscribe(error => alert('Error con el plugin!!!' + error));

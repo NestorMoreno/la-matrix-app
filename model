@@ -40,7 +40,7 @@ matches
 	description
 	scoreA
 	scoreB
-	finished
+	finished (Sin iniciar 0, en convocatoria 1, en juego 2, finalizado 3)
 	dateSubscription
 	dateStartMatch
 	dateEndMatch
